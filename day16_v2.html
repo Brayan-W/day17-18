@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">    
+    <title>IFE ECMAScript</title>
+</head>
+<body>        
+    <input id="first-number" type="number" value="0" placeholder="第一个数字">
+    <input id="second-number" type="number" value="0" placeholder="第二个数字">
+    <button id="add-btn" onclick="add()">加</button>
+    <button id="minus-btn" onclick="minus()">减</button>
+    <button id="times-btn" onclick="times()">乘</button>
+    <button id="divide-btn" onclick="divide()">除</button>
+    <p id="result">运算结果</p>
+    <script>
+        function add(){
+                var firstNumber = document.getElementById("first-number").value;
+                var secondNumber = document.getElementById("second-number").value;
+            document.getElementById("result").innerHTML = parseInt(firstNumber) + parseInt(secondNumber); 
+        }
+        function minus(){
+            var firstNumber = document.getElementById("first-number").value;
+            var secondNumber = document.getElementById("second-number").value;
+            document.getElementById("result").innerHTML = parseInt(firstNumber) - parseInt(secondNumber); 
+        }
+        function times(){
+            var firstNumber = document.getElementById("first-number").value;
+            var secondNumber = document.getElementById("second-number").value;
+            document.getElementById("result").innerHTML = parseInt(firstNumber) * parseInt(secondNumber); 
+        }
+        function divide(){
+            try {
+                var firstNumber = document.getElementById("first-number").value;
+                var secondNumber = document.getElementById("second-number").value;
+                if(secondNumber == 0) throw "divisor can't be zero!"
+            } catch (error) {
+                alert(error);
+            }
+            document.getElementById("result").innerHTML = parseInt(firstNumber) / parseInt(secondNumber); 
+        }
+    </script>
+</body>
+</html>
